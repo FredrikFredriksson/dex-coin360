@@ -17,7 +17,7 @@ window.__RUNTIME_CONFIG__ = {
   "VITE_APP_DESCRIPTION": "Orderly Trading Application",
   "VITE_HAS_PRIMARY_LOGO": "true",
   "VITE_HAS_SECONDARY_LOGO": "true",
-  "VITE_ENABLED_MENUS": "Trading,Swap,Portfolio,Leaderboard,Rewards,Markets,Vaults",
+  "VITE_ENABLED_MENUS": "Trading,Swap,Portfolio,Leaderboard,Markets,Vaults",
   "VITE_CUSTOM_MENUS": "COIN360, https://coin360.com",
   "VITE_ENABLE_CAMPAIGNS": "true",
   "VITE_TELEGRAM_URL": "",
