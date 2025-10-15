@@ -10,7 +10,7 @@ function loadConfigTitle(): string {
   try {
     const configPath = path.join(__dirname, "public/config.js");
     if (!fs.existsSync(configPath)) {
-      return "Orderly Network";
+      return "COIN360";
     }
 
     const configText = fs.readFileSync(configPath, "utf-8");
@@ -20,10 +20,10 @@ function loadConfigTitle(): string {
       .trim();
 
     const config = JSON.parse(jsonText);
-    return config.VITE_ORDERLY_BROKER_NAME || "Orderly Network";
+    return config.VITE_ORDERLY_BROKER_NAME || "COIN360";
   } catch (error) {
     console.warn("Failed to load title from config.js:", error);
-    return "Orderly Network";
+    return "COIN360";
   }
 }
 

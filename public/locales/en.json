@@ -143,7 +143,7 @@
   "markets.symbolInfoBar.Index": "Index",
   "markets.symbolInfoBar.Index.tooltip": "Average of the last prices across other exchanges.",
   "markets.symbolInfoBar.24hVolume": "24h volume",
-  "markets.symbolInfoBar.24hVolume.tooltip": "24 hour total trading volume on the Orderly Network.",
+  "markets.symbolInfoBar.24hVolume.tooltip": "24 hour total trading volume on COIN360.",
   "markets.symbolInfoBar.predFundingRate": "Pred. funding rate",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Funding rates are payments between traders who are long and short. When positive, long positions pay short positions funding. When negative, short positions pay long positions.",
   "portfolio.feeTier": "Fee tier",

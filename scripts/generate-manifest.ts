@@ -125,7 +125,7 @@ function generateManifest() {
     short_name: config.VITE_APP_NAME || "Orderly DEX",
     description:
       config.VITE_APP_DESCRIPTION ||
-      "A powerful perpetual trading DEX powered by Orderly Network",
+      "A powerful perpetual trading DEX powered by COIN360",
     start_url: startUrl,
     scope: basePath,
     display: "standalone",
