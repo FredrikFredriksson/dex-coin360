@@ -1,5 +1,5 @@
 :root {
-  --oui-font-family: 'Roboto', sans-serif;
+  --oui-font-family: "DIN 2014 Demi", "PingFang SC", "Noto Sans CJK SC";
   --oui-font-size-base: 16px;
 
   /* colors */
@@ -88,7 +88,8 @@
   --oui-spacing-xl: 33.75rem;
 }
 
-html, body {
-  font-family: 'Roboto', sans-serif !important;
+html,
+body {
+  font-family: "DIN 2014 Demi", "PingFang SC", "Noto Sans CJK SC" !important;
   font-size: 16px !important;
 }

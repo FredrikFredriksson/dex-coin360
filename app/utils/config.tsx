@@ -277,7 +277,7 @@ export const useOrderlyConfig = () => {
           telegramUrl: getRuntimeConfig('VITE_TELEGRAM_URL') || undefined,
           discordUrl: getRuntimeConfig('VITE_DISCORD_URL') || undefined,
           twitterUrl: getRuntimeConfig('VITE_TWITTER_URL') || undefined,
-          trailing: <span className="oui-text-2xs oui-text-base-contrast-54">Charts powered by <a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a></span>
+          trailing: <span className="oui-text-2xs oui-text-base-contrast-54">Charts powered by <a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a> • <a href="http://www.onlinewebfonts.com" target="_blank" rel="noopener noreferrer">Web Fonts</a></span>
         },
       },
       orderlyAppProvider: {

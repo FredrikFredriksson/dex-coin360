@@ -1,20 +1,33 @@
 @font-face {
-  font-family: 'Manrope';
-  src: url('/fonts/Manrope/Manrope-Medium.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  src: url('/fonts/Manrope/Manrope-SemiBold.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Manrope';
-  src: url('/fonts/Manrope/Manrope-Bold.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("/fonts/Manrope/Manrope-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN 2014 Demi";
+  src: url("/fonts/DIN2014-Demi/1dd1c7d8df011c2266f33ebd5927c0ab.woff2")
+      format("woff2"),
+    url("/fonts/DIN2014-Demi/1dd1c7d8df011c2266f33ebd5927c0ab.woff")
+      format("woff"),
+    url("/fonts/DIN2014-Demi/1dd1c7d8df011c2266f33ebd5927c0ab.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
