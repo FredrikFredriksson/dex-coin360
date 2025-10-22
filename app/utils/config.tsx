@@ -9,6 +9,7 @@ import { PortfolioActiveIcon, PortfolioInactiveIcon, TradingActiveIcon, TradingI
 import { getRuntimeConfig, getRuntimeConfigBoolean, getRuntimeConfigNumber } from "./runtime-config";
 import { Link } from "react-router-dom";
 import CustomLeftNav from "@/components/CustomLeftNav";
+import { MoreDropdown } from "@/components/MoreDropdown";
 
 interface MainNavItem {
   name: string;
@@ -42,19 +43,22 @@ export type OrderlyConfig = {
 const ALL_MENU_ITEMS = [
   { name: "Trading", href: "/", translationKey: "common.trading" },
   { name: "Portfolio", href: "/portfolio", translationKey: "common.portfolio" },
-  { name: "Markets", href: "/markets", translationKey: "common.markets" },
   { name: "Swap", href: "/swap", translationKey: "extend.swap" },
   { name: "Rewards", href: "/rewards", translationKey: "tradingRewards.rewards" },
   { name: "Leaderboard", href: "/leaderboard", translationKey: "tradingLeaderboard.leaderboard" },
-  { name: "Vaults", href: "/vaults", translationKey: "common.vaults" },
 ];
 
 const DEFAULT_ENABLED_MENUS = [
   { name: "Trading", href: "/", translationKey: "common.trading" },
   { name: "Portfolio", href: "/portfolio", translationKey: "common.portfolio" },
-  { name: "Markets", href: "/markets", translationKey: "common.markets" },
   { name: "Swap", href: "/swap", translationKey: "extend.swap" },
   { name: "Leaderboard", href: "/leaderboard", translationKey: "tradingLeaderboard.leaderboard" },
+];
+
+const MORE_MENU_ITEMS = [
+  { name: "Markets", href: "/markets", translationKey: "common.markets" },
+  { name: "Vaults", href: "/vaults", translationKey: "common.vaults" },
+  { name: "How To", href: "/how-to", translationKey: "" },
 ];
 
 const getCustomMenuItems = (): MainNavItem[] => {
@@ -189,19 +193,25 @@ export const useOrderlyConfig = () => {
     const customMenus = getCustomMenuItems();
     
     const translatedEnabledMenus = enabledMenus.map(menu => ({
-      name: t(menu.translationKey),
+      name: menu.translationKey ? t(menu.translationKey) : menu.name,
+      href: menu.href,
+    }));
+    
+    const translatedMoreMenus = MORE_MENU_ITEMS.map(menu => ({
+      name: menu.translationKey ? t(menu.translationKey) : menu.name,
       href: menu.href,
     }));
     
     const allMenuItems = [...translatedEnabledMenus, ...customMenus];
     
     const supportedBottomNavMenus = ["Trading", "Portfolio", "Markets", "Leaderboard"];
-    const bottomNavMenus = enabledMenus
+    const allMenusForBottomNav = [...enabledMenus, ...MORE_MENU_ITEMS];
+    const bottomNavMenus = allMenusForBottomNav
       .filter(menu => supportedBottomNavMenus.includes(menu.name))
       .map(menu => {
         const icons = getBottomNavIcon(menu.name);
         return {
-          name: t(menu.translationKey),
+          name: menu.translationKey ? t(menu.translationKey) : menu.name,
           href: menu.href,
           ...icons
         };
@@ -235,14 +245,11 @@ export const useOrderlyConfig = () => {
         <Flex justify="between" className="oui-w-full">
           <Flex
             itemAlign={"center"}
-            className={cn(
-              "oui-gap-3",
-              "oui-overflow-hidden",
-            )}
+            className="oui-gap-3"
           >
             { isMobile && 
               <CustomLeftNav
-                menus={translatedEnabledMenus}
+                menus={[...translatedEnabledMenus, ...translatedMoreMenus]}
                 externalLinks={customMenus}
               />
             }
@@ -251,7 +258,10 @@ export const useOrderlyConfig = () => {
                 ? <img src={withBasePath("/logo-secondary.webp")} alt="logo" style={{ height: "32px" }} />
                 : components.title}
             </Link>
-            {components.mainNav}
+            <div className="oui-flex oui-items-center oui-gap-3 oui-overflow-hidden">
+              {components.mainNav}
+            </div>
+            {!isMobile && <MoreDropdown items={translatedMoreMenus} />}
           </Flex>
 
           <Flex itemAlign={"center"} className="oui-gap-2">
