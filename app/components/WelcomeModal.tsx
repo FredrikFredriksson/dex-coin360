@@ -104,7 +104,7 @@ export function WelcomeModal() {
         >
         {/* Close Button */}
         <button
-          onClick={() => handleClose(false)}
+          onClick={() => handleClose(true)}
           className="oui-absolute oui-top-4 oui-right-4 oui-z-10 oui-w-8 oui-h-8 oui-rounded-full oui-bg-base-7 hover:oui-bg-base-6 oui-flex oui-items-center oui-justify-center oui-text-base-contrast-54 hover:oui-text-base-contrast-80 oui-transition-colors"
           aria-label="Close"
         >
