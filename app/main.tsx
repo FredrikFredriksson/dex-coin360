@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import { withBasePath } from './utils/base-path';
+import { initAnalytics } from './utils/analytics';
 
 import './styles/index.css';
 
@@ -128,6 +129,7 @@ const router = createBrowserRouter([
 ], { basename: basePath });
 
 loadRuntimeConfig().then(() => {
+  initAnalytics();
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <HelmetProvider>
